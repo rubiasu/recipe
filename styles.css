@@ -147,6 +147,7 @@ nav li:nth-child(n + 3):not(#profile) {
 }
 nav li:nth-child(n + 3):not(#profile):hover {
     background-color: #EB5428;
+    transition: ease-in-out .5s;
 }
 #bfast {
     grid-area: bfast;
@@ -179,11 +180,17 @@ nav li a {
     width: 100%;
 }
 nav li a :not(svg) {
-    color: #EB5428
+    color: #EB5428;
+}
+nav li a svg {
+    stroke: #EB5428
+}
+#home svg{
+    stroke: #FFFFFF;
 }
 nav li a:hover :not(svg) {
-    background-color: #EB5428;
     color: #F2F2F2;
+    transition: ease-in 0.5s;
 }
 /* Search */
 form {
@@ -207,6 +214,9 @@ form button{
 form button:hover {
     cursor: pointer;
 }
+form button:focus {
+    /* background: #0D0D0D; */
+}
 form svg {
     width: 55px;
     stroke: #FFFFFF;
@@ -228,6 +238,8 @@ menu {
     flex-direction: row;
     justify-content: space-around;
     margin-bottom: 0.5em;
+    background: none;
+    transition: all .5s;
 }
 menu li {
     display: flex;
@@ -242,6 +254,11 @@ menu li a{
     flex-direction: column-reverse;
     align-items: center;
     color: #EB5428;
+    stroke: #EB5428
+}
+menu li a:hover {
+    color: #0D0D0D;
+    stroke: #0D0D0D
 }
 header img {
     width: 100%;
@@ -361,9 +378,12 @@ footer h2 {
     display: flex;
     flex-flow: column-reverse;
     align-items: center;
-}
-#social span {
     color: #EB5428;
+    stroke: #EB5428;
+}
+#social a:hover {
+    color: #0D0D0D;
+    stroke: #0D0D0D;
 }
 #copy {
     display: flex;
@@ -392,6 +412,9 @@ footer h2 {
     nav ul li {
         flex-basis: calc(100% / 7);
     }
+    nav ul li:hover {
+        background-color: #FFFFFF;
+    }
     #home {
         order: -3;
         flex-basis: 10%
@@ -413,6 +436,15 @@ footer h2 {
         flex-direction: column-reverse;
         margin-bottom: 1em;
         max-height: 100px;
+    }
+    nav li:nth-child(n + 3):not(#profile):hover {
+        background-color: unset;
+    }
+    nav li a:hover :not(svg){
+        color: #0D0D0D
+    }
+    nav li a img:hover {
+        filter:saturate(1.5)
     }
     nav img {
         display: flex;
@@ -439,6 +471,7 @@ footer h2 {
         backdrop-filter: blur(10px);
         z-index: 2;
         padding: 1em 0;
+        /* transition: all .5s; */
     }
     header img {
         position: relative;
